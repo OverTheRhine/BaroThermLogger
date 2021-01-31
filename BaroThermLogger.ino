@@ -7,7 +7,7 @@
  *  Created:  23.01.2021
  *  Modified: 31.01.2021
  *  Tested:   31.01.2021
- *  Resources used: 20614 Bytes (71%) of Program Memory. Maximum are 28672 Bytes.
+ *  Resources used: 20620 Bytes (71%) of Program Memory. Maximum are 28672 Bytes.
  *  Courtesy: Adafruit https://www.adafruit.com/product/1893 
  *  and https://learn.adafruit.com/adafruit-feather-32u4-adalogger/using-the-sd-card?embeds=allow
  *  
@@ -166,8 +166,6 @@ void setup() {
 
   myPressure.setOversampleRate(7); // Set Oversample to the recommended 128
   myPressure.enableEventFlags(); // Enable all three pressure and temp event flags 
-
-
 
 // Destroy all existing files BT_DAT(xy).TXT (stored on SD-Card); only possible when connected to a terminal
   val = digitalRead(intDIP_SW1);
