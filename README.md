@@ -5,7 +5,7 @@ Tags: TSL2561, FEATHER 32U4 ADALOGGER, Arduino, I2C, SPI, Barometric Pressure, A
 Simple data logger based on ADAFRUIT FEATHER 32U4 ADALOGGER with Barometric Pressure/Altitude/Temperature sensor MPL3115A2 on an ADAFRUIT breakout board. Programming language is C++ (Arduino sketch). Four different functions are available by selecting them with the help of a 4 Bit DIP switch. 100 text files with acquired data can be stored on the SD card.
 
 ## Functionality:
-* Read temperature (Degree Celsius / Fahrenheit) and barometric pressure data (Pa) from sensor and store it as string values on SD card
+* Read temperature (Degree Celsius) and barometric pressure data (Pa) from sensor and store it as string values on SD card
 * Read all data from all text files from SD card and send it via USB serial to terminal program
 * Read directory from SD card and send it via USB serial to terminal program
 * Toggle logging/no logging with DIP switch
