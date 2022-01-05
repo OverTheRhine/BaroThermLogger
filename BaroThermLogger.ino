@@ -2,14 +2,14 @@
 /* 
  *  Version: 0-2-0
  *  Arduino IDE V1.8.13
- *  Board: Adafruit Feather 32u4 Adalogger https://learn.adafruit.com/adafruit-feather-32u4-adalogger
- *  Sensor: MPL3115A2 - I2C Barometric Pressure/Altitude/Temperature Sensor
+ *  Board: Adafruit Feather M0 Adalogger https://learn.adafruit.com/adafruit-feather-m0-adalogger
+ *  Sensor: MPL3115A2 - I2C Barometric Pressure/Altitude/Temperature Sensor: https://www.adafruit.com/product/1893
  *  Created:  23.01.2021
- *  Modified: 31.01.2021
+ *  Modified: 28.12.2021
  *  Tested:   31.01.2021
  *  Resources used: 20620 Bytes (71%) of Program Memory. Maximum are 28672 Bytes.
- *  Courtesy: Adafruit https://www.adafruit.com/product/1893 
- *  and https://learn.adafruit.com/adafruit-feather-32u4-adalogger/using-the-sd-card?embeds=allow
+ *  Courtesy: Adafruit https://learn.adafruit.com/adafruit-feather-m0-adalogger
+ *  and https://learn.adafruit.com/adafruit-feather-m0-adalogger/using-the-sd-card
  *  
  *  Our weather page presents pressure in Inches (Hg) 
  *  Use http://www.onlineconversion.com/pressure.htm for other units
@@ -72,10 +72,10 @@
 #define sdLED 8                   // Internal LED #8 (
 #define intLED 13                 // Internal LED #13 (red)
 // Each port for DIP switch connected to GND via 10k pull-down resistor
-#define intDIP_SW4 12             // DIP-Switch #4
-#define intDIP_SW3 11             // DIP-Switch #3
-#define intDIP_SW2 10             // DIP-Switch #2
-#define intDIP_SW1 9              // DIP-Switch #1
+#define intDIP_SW4 12             // DIP-Switch #4 Function: Switch measurement on/off
+#define intDIP_SW3 11             // DIP-Switch #3 Function: Function: Switch to read all content of existing files LUXDAT(xy).TXT (storing via terminal program to an ASCII file)
+#define intDIP_SW2 10             // DIP-Switch #2 Function: Switch to read SD-Card directory; only possible when connected to a terminal
+#define intDIP_SW1 9              // DIP-Switch #1 Function: Switch to destroy all existing files LUXDAT(xy).TXT (stored on SD-Card); only possible when connected to a terminal
 
 MPL3115A2 myPressure;             //Create an instance of the object
 
@@ -137,6 +137,11 @@ void printDirectory(File dir, int numTabs) {
 /**************************************************************************/
 /*
     Arduino setup function (automatically called at startup)
+
+CHECK CODE for using "Serial.begin(9600);"
+
+
+    
 */
 /**************************************************************************/
 void setup() {
